@@ -1,0 +1,141 @@
+/* Navbar Base Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #343a40;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Navbar Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand h1 {
+  font-size: 1.8rem;
+  color: white;
+}
+
+.logo {
+  background-image: url("../../assets/timemanagement.png");
+  background-size: cover;
+  background-position: center;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+/* Navigation Links */
+.navbar-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.3s, background-color 0.3s;
+  border-radius: 5px;
+}
+
+.nav-item:hover,
+.nav-item:focus {
+  background-color: #6c757d; /* Slightly lighter shade for better contrast */
+  color: white;
+  outline: 2px solid #6c757d; /* Accessibility focus outline */
+}
+
+
+.nav-item i {
+  margin-right: 8px; /* Add space between icon and text */
+}
+
+.logout-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 8px 12px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-btn:hover {
+  background-color: #d9534f;
+  color: white;
+  border-radius: 5px;
+}
+
+/* Mobile View */
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 20px;
+  cursor: pointer;
+}
+
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 2px;
+}
+
+/* Mobile Menu Styles */
+.navbar-links {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .nav-item {
+    text-align: center;
+    background-color: #495057;
+  }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #343a40;
+    width: 95%;
+    padding: 3%;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+
+  .navbar-links.show-menu {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .nav-item {
+    margin-right: 0;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .nav-item span {
+    display: none; /* Hide text in mobile view */
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+}
